@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.hello-world"
-        version   = "2.2.0">
+        id        = "com.redbite.redlite"
+        version   = "0.0.1">
     <name>RedLite</name>
 
     <description>
-        Art Gallery information system.
+        Art Gallery information system
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
