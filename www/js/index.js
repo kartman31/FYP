@@ -25,7 +25,7 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bind: function() {
-        document.addEventListener('deviceready', this.deviceready, false);
+        document.addEventListener('deviceready', this.deviceready, true);
     },
    
     deviceready: function() {
@@ -49,8 +49,7 @@ var app = {
     },
 
     scan: function() {
-        alert("button clicked");
-        console.log('scanning');
+        console.log('Started scanning.');
         try {
             window.plugins.barcodeScanner.scan(function(args) {
                 console.log("Scanner result: \n" +
