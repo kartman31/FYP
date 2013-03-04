@@ -14,11 +14,16 @@
     </author>
 
     <feature name="http://api.phonegap.com/1.0/device" />
+    <feature name="http://api.phonegap.com/1.0/camera" />
+    <feature name="http://api.phonegap.com/1.0/file" />
+    <feature name="http://api.phonegap.com/1.0/media" />
+    <feature name="http://api.phonegap.com/1.0/network" />
 
-    <preference name="phonegap-version" value="2.2.0" />
-    <preference name="orientation"      value="default" />
+    <preference name="phonegap-version" value="2.3.0" />
+    <preference name="orientation"      value="portrait" />
     <preference name="target-device"    value="universal" />
-    <preference name="fullscreen"       value="false" />
+    <preference name="fullscreen"       value="true" />
+    <preference name="splash-screen-duration" value="10000" />
 
     <icon src="icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
@@ -51,3 +56,4 @@
         <param name="APP_ID" value="505037456205421" />
     </gap:plugin> -->
 </widget>
+3
