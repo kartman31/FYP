@@ -17,35 +17,36 @@
  * under the License.
  */
 var app = {
+    // Application Constructor
     initialize: function() {
-        this.bind();
+        this.bindEvents();
     },
-    bind: function() {
-        document.addEventListener('deviceready', this.deviceready, false);
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
     },
-    deviceready: function() {
-        // This is an event handler function, which means the scope is the event.
-        // So, we must explicitly called `app.report()` instead of `this.report()`.
-        app.report('deviceready');
-        console.log("Device is ready!")
+    // deviceready Event Handler
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicity call 'app.receivedEvent(...);'
+    onDeviceReady: function() {
+        app.receivedEvent('deviceready');
     },
-    report: function(id) {
-        //var parentElement = document.getElementById(id);
-        //var listeningElement = parentElement.querySelector('.listening');
-        //var receivedElement = parentElement.querySelector('.received');
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
 
-        //listeningElement.setAttribute('style', 'display:none;');
-        //receivedElement.setAttribute('style', 'display:block;');
-        // Report the event in the console
-        console.log("Report: " + id);
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
 
-        // Toggle the state from "pending" to "complete" for the reported ID.
-        // Accomplished by adding .hide to the pending element and removing
-        // .hide from the complete element.
-        document.querySelector('#' + id + ' .pending').className += ' hide';
-        var completeElem = document.querySelector('#' + id + ' .complete');
-        completeElem.className = completeElem.className.split('hide').join('');
-    },
+        console.log('Received Event: ' + id);
+    }
+
     scan: function() {
         console.log('scanning');
         try {
@@ -54,11 +55,11 @@ var app = {
                     "text: " + args.text + "\n" +
                     "format: " + args.format + "\n" +
                     "cancelled: " + args.cancelled + "\n");
-                /*
+                
                 if (args.format == "QR_CODE") {
                     window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
                 }
-                */
+                
                 document.getElementById("info").innerHTML = args.text;
                 console.log(args);
         });
