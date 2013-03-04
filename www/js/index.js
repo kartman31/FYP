@@ -30,7 +30,7 @@ var app = {
    
     deviceready: function() {
         app.report('deviceready');
-        console.log("Device is ready!")
+        console.log("Device is ready!");
     },
     
     report: function(id) {
@@ -59,6 +59,7 @@ var app = {
                     "cancelled: " + args.cancelled + "\n");
                 
                 if (args.format == "QR_CODE") {
+                    console.log("Scanned a QR code!");
                     window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
                 }
                 
