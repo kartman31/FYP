@@ -59,7 +59,7 @@ var app = {
                 
                 if (args.format == "QR_CODE") {
                     console.log("Scanned a QR code!");
-                    window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
+                    // window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
                     document.getElementById("info").innerHTML = args.text;
                 }
                 
