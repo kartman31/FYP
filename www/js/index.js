@@ -19,6 +19,7 @@
 var app = {
     // Application Constructor
     initialize: function() {
+        console.log("aarrrrrrggggghhh")
         this.bind();
     },
     
@@ -41,7 +42,11 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        console.log('Report: ' + id);
+        document.querySelector('#' + id + ' .pending').className += ' hide';
+        var completeElem = document.querySelector('#' + id + ' .complete');
+        completeElem.className = completeElem.className.split('hide').join('');
+
     },
 
     scan: function() {
