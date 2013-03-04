@@ -1,0 +1,5 @@
+/* To hide divs */
+.hide {
+	visibility: hidden;
+	display: none;
+}
